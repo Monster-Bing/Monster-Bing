@@ -1,10 +1,5 @@
 class Solution(object):
     def removeElement(self, nums, val):
-        """
-        :type nums: List[int]
-        :type val: int
-        :rtype: int
-        """
         n = len(nums) #在python中用len求列表元素
         i = 0
         while i < n - 1:
