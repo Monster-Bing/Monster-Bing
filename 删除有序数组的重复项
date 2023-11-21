@@ -8,3 +8,18 @@ class Solution(object):
                 del nums[j]
                 n = len(nums)# 因为执行了del语句后nums列表总数会随之变动
             i += 1
+# 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使得出现次数超过两次的元素只出现两次 ，返回删除后数组的新长度。
+class Solution(object):
+    def removeDuplicates(self, nums):
+        i = 0
+        while i < len(nums) - 2:
+            j = i + 1
+            k = i + 2
+            while nums[i] == nums[j] and nums[j] == nums[k]:
+                del nums[k]
+# 利用k的取值判断是否还需要再删除元素，避免了出现超过数列nums[k]的维度
+# 但是每一次都要判断，运行内存大大加大
+                if k > len(nums) - 1:
+                    break
+            i += 1
+        
